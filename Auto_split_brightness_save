@@ -17,11 +17,11 @@ for (i=0;i<numFiles;i++) { #This means as long as the i value is less than the t
 	selectWindow("C2-" + file); #Select the window with C2- in it from the currently opened windows of the images
 	run("Brightness/Contrast...");
 	setMinAndMax(0, 80);
-	saveAs("Tiff", saveloc + "C2-" + file); #Save the processed images in the chosen Output Directory with C2- in it.
+	saveAs("Tiff", saveloc + "C2-" + file); #Save the processed images in the chosen Output Directory with C2- in it. "C2" = blue channel.
 	selectWindow("C1-" + file);
 	run("Brightness/Contrast...");
 	setMinAndMax(0, 23);
-	saveAs("Tiff", saveloc + "C1-" + file);
+	saveAs("Tiff", saveloc + "C1-" + file); #"C1-" here is equal to the green channel, whatever the marker is in this green channel.
 	run("Close All");
 }
 
