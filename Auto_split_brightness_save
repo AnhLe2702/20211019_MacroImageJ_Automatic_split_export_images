@@ -1,3 +1,4 @@
+//This specific macro is originally for 2-channel image but can be updated to more than 2 channels
 selectedFolder = getDirectory("Choose Source Directory "); //Choose a folder (directory) where your original images are.
 
 fileList = getFileList(selectedFolder); //the getFileList function returns an array of all the file names present in the selectedFolder.
