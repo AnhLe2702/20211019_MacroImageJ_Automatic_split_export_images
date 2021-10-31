@@ -1,5 +1,5 @@
 //This macro is used to measure the Dextran area of a selected region. Input images should already be pre-processed to delete the unselected area and leave only the region that 
-contain the Dextran you want to measure. 
+//contain the Dextran you want to measure. 
 //Create a folder that only contains the images that you want to measure the Dextran signal of.
 //Create another folder called "Dextran" on Desktop to export the Result file into.
 //This macro was originally written to analyse the Dextran area of the selected cells for the macropinocytosis assay.
@@ -27,4 +27,4 @@ for (i=0;i<numFiles;i++) { //This means as long as the i value is less than the 
 }
 selectWindow("Summary");
 saveAs("Results", "/Users/ale/Desktop/Dextran/Summary.csv"); //Apparently, if I out these two command last outside of the "for" loop, this will let all the Summary results to be
-                                                               put into the same window and therefore can be saved all at one.
+                                                             //put into the same window and therefore can be saved all at one.
