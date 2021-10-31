@@ -1,0 +1,24 @@
+selectedFolder = getDirectory("Choose Source Directory "); //Choose a folder (directory) where your original images are.
+
+fileList = getFileList(selectedFolder); //the getFileList function returns an array of all the file names present in the selectedFolder.
+
+numFiles = lengthOf(fileList); //the lengthOf function counts the number of files in the fileList array (which, by extension, is in the source directory).
+
+saveloc = getDirectory("Choose Ouput Directory"); //Choose a folder where the exported images are to be saved in.
+//print(numFiles) //This is optional but you can print out the number of files from the original folder as a way of checking if the code is working.
+
+setBatchMode(true); //Automatically turn off any analysing image window.
+
+//This whole block below is an iteration command that will go through each file in the Source Directory and execute the command attached.
+for (i=0;i<numFiles;i++) { //This means as long as the i value is less than the total number of files in the selected Folder, it will increase by 1 each time and the command is executed. 
+	file = fileList[i]; //I believe this is indexing the file eg from 0 to i, whatever i is.
+	open(selectedFolder + file);
+	run("Auto Threshold", "method=MaxEntropy white");
+	run("Threshold...");
+	setThreshold(255, 255);
+	run("Analyze Particles...", "  show=Outlines display summarize");
+	run("Close All");
+}
+selectWindow("Summary");
+saveAs("Results", "/Users/ale/Desktop/Dextran/Summary.csv"); //Apparently, if I out these two command last outside of the "for" loop, this will let all the Summary results to be
+                                                               put into the same window and therefore can be saved all at one.
