@@ -13,7 +13,7 @@ numFiles = lengthOf(fileList); //the lengthOf function counts the number of file
 saveloc = getDirectory("Choose Ouput Directory"); //Choose a folder where the exported images are to be saved in.
 //print(numFiles) //This is optional but you can print out the number of files from the original folder as a way of checking if the code is working.
 
-setBatchMode(true); //Not sure if this is needed. The code is still working without this so I need to figure out what this means. 
+setBatchMode(true); //BatchMode on automatically shutdown any image window as they are being processed. Turn this off will lead to the windows being open. 
 
 //This whole block below is an iteration command that will go through each file in the Source Directory and execute the command attached.
 for (i=0;i<numFiles;i++) { //This means as long as the i value is less than the total number of files in the selected Folder, it will increase by 1 each time and the command is executed. 
