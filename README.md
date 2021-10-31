@@ -1,5 +1,6 @@
 # 20211019_MacroImageJ_Sem_automatic_Macropinocytosis_analysis
 This package contains 3 separate macro for semi-automatically analyse and export results for macropinocytosis assay.
+
 Step 1: Use the "Updated_Auto_split_adjust_save" macro
 This macro automatically split the 2 channels DAPI and Dextran, and adjust the brightness of the Dextran channel to allow area selection later on and then save all the images
 into a selected Output folder. 
