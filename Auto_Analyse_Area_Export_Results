@@ -1,5 +1,5 @@
 //This macro is used to measure the area of a selected region. Input images should already be pre-processed to delete the unselected area and leave only the region that you
-want to measure the area of. 
+//want to measure the area of. 
 //Create a folder that only contains the images that you want to measure the area of.
 //Create another folder called "Area" on Desktop to export the Result file into.
 //This macro was originally written to analyse the area of the selected cells for the macropinocytosis assay.
