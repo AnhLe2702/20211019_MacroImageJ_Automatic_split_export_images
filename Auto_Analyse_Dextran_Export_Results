@@ -1,3 +1,9 @@
+//This macro is used to measure the Dextran area of a selected region. Input images should already be pre-processed to delete the unselected area and leave only the region that 
+contain the Dextran you want to measure. 
+//Create a folder that only contains the images that you want to measure the Dextran signal of.
+//Create another folder called "Dextran" on Desktop to export the Result file into.
+//This macro was originally written to analyse the Dextran area of the selected cells for the macropinocytosis assay.
+
 selectedFolder = getDirectory("Choose Source Directory "); //Choose a folder (directory) where your original images are.
 
 fileList = getFileList(selectedFolder); //the getFileList function returns an array of all the file names present in the selectedFolder.
