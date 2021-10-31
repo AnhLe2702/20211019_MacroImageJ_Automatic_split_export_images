@@ -1,3 +1,9 @@
+//This macro is used to measure the area of a selected region. Input images should already be pre-processed to delete the unselected area and leave only the region that you
+want to measure the area of. 
+//Create a folder that only contains the images that you want to measure the area of.
+//Create another folder called "Area" on Desktop to export the Result file into.
+//This macro was originally written to analyse the area of the selected cells for the macropinocytosis assay.
+
 selectedFolder = getDirectory("Choose Source Directory "); //Choose a folder (directory) where your original images are.
 
 fileList = getFileList(selectedFolder); //the getFileList function returns an array of all the file names present in the selectedFolder.
@@ -17,7 +23,7 @@ for (i=0;i<numFiles;i++) { //This means as long as the i value is less than the 
 	run("Threshold...");
 	setThreshold(1, 250);
 	run("Analyze Particles...", "  show=Outlines display summarize");
-	selectWindow("Results");
-	saveAs("Results", "/Users/ale/Desktop/Area/Results.csv");
+	selectWindow("Results"); //This select the Result window where the measurements are
+	saveAs("Results", "/Users/ale/Desktop/Area/Results.csv"); //This saves the Results file to the folder called "Area"
 	run("Close All");
 }
