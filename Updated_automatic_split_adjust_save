@@ -1,0 +1,35 @@
+//This specific macro is originally for 2-channel image but can be updated to more than 2 channels
+//Create an Output folder somewhere else outside of the original source directory to avoid error message
+selectedFolder = getDirectory("Choose Source Directory "); //Choose a folder (directory) where your original images are.
+
+fileList = getFileList(selectedFolder); //the getFileList function returns an array of all the file names present in the selectedFolder.
+
+numFiles = lengthOf(fileList); //the lengthOf function counts the number of files in the fileList array (which, by extension, is in the source directory).
+
+saveloc = getDirectory("Choose Ouput Directory"); //Choose a folder where the exported images are to be saved in.
+//print(numFiles) //This is optional but you can print out the number of files from the original folder as a way of checking if the code is working.
+
+setBatchMode(true); //Not sure if this is needed. The code is still working without this so I need to figure out what this means. 
+
+//This whole block below is an iteration command that will go through each file in the Source Directory and execute the command attached.
+for (i=0;i<numFiles;i++) { //This means as long as the i value is less than the total number of files in the selected Folder, it will increase by 1 each time and the command is executed. 
+	file = fileList[i]; //I believe this is indexing the file eg from 0 to i, whatever i is.
+	open(selectedFolder + file); //Open a file from the Source Directory
+	run("Split Channels"); 
+	selectWindow("C2-" + file); //Select the window with C2- in it from the currently opened windows of the images
+	run("8-bit");
+	run("8-bit"); //Convert to grey-scale 8-bit
+	rename("1"); //Rename the image for easier to select window later on
+	run("Duplicate...", " ");
+	selectWindow("1-1");
+	run("Brightness/Contrast...");
+	setMinAndMax(0, 20);
+	saveAs("Tiff", saveloc + "Area_" + file); //Save the processed images in the chosen Output Directory with "Area_" in it + original file name
+	selectWindow("1");
+	saveAs("Tiff", saveloc + "Dextran_" + file); //Save processed images with "Dextran_" in it + original file name
+	run("Close All");
+}
+
+//NOTES: The error I got is "Multichannel image required: run("Split Channels" <)>;" is now gone, possible because I moved the Output folder outside of the original
+Source Directory.
+
