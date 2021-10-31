@@ -1,4 +1,4 @@
-# 20211019_MacroImageJ_Sem_automatic_Macropinocytosis_analysis
+# 20211019_MacroImageJ_Semi_automatic_Macropinocytosis_analysis
 This package contains 3 separate macro for semi-automatically analyse and export results for macropinocytosis assay.
 
 Step 1: Use the "Updated_Auto_split_adjust_save" macro
