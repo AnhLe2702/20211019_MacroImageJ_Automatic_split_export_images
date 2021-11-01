@@ -6,7 +6,7 @@ fileList = getFileList(selectedFolder); //the getFileList function returns an ar
 
 numFiles = lengthOf(fileList); //the lengthOf function counts the number of files in the fileList array (which, by extension, is in the source directory).
 
-saveloc = getDirectory("Choose Ouput Directory"); //Choose a folder where the exported images are to be saved in.
+saveloc = getDirectory("Choose Output Directory"); //Choose a folder where the exported images are to be saved in.
 //print(numFiles) //This is optional but you can print out the number of files from the original folder as a way of checking if the code is working.
 
 setBatchMode(true); //Not sure if this is needed. The code is still working without this so I need to figure out what this means. 
