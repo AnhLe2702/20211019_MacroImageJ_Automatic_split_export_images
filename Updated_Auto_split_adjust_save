@@ -15,7 +15,7 @@ setBatchMode(true); //Not sure if this is needed. The code is still working with
 for (i=0;i<numFiles;i++) { //This means as long as the i value is less than the total number of files in the selected Folder, it will increase by 1 each time and the command is executed. 
 	file = fileList[i]; //I believe this is indexing the file eg from 0 to i, whatever i is.
 	open(selectedFolder + file); //Open a file from the Source Directory
-	run("Split Channels"); 
+	run("Split Channels"); //Make sure to not tick the "split channel" in the popup window for czi file
 	selectWindow("C2-" + file); //Select the window with C2- in it from the currently opened windows of the images
 	run("8-bit");
 	run("8-bit"); //Convert to grey-scale 8-bit
@@ -30,6 +30,5 @@ for (i=0;i<numFiles;i++) { //This means as long as the i value is less than the 
 	run("Close All");
 }
 
-//NOTES: The error I got is "Multichannel image required: run("Split Channels" <)>;" is now gone, possible because I moved the Output folder outside of the original
-Source Directory.
+//NOTES: The error I got is "Multichannel image required: run("Split Channels" <)>;" is now gone because I untick the "split channel" in the popup window for czi file
 
